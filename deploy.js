@@ -13,7 +13,7 @@ const web3 = new Web3(provider)
 const deploy = async() => {
     const accounts = await web3.eth.getAccounts();
     const result = await new web3.eth.Contract(JSON.parse(interface))
-        .deploy({ data: bytecode, arguments: ["Primer intento"] })
+        .deploy({ data: bytecode})
         .send({ gas: "1000000", gasPrice: "5000000", from: accounts[0] })
     console.log(result, options.address)
 }
