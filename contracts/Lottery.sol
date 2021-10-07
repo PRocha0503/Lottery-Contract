@@ -26,7 +26,7 @@ contract Lottery {
         return uint(sha3(block.difficulty,players,now));
     }
     
-    function pickWinner()  public restricted returns(address){
+    function pickWinner() public restricted returns(address){
         address winner = players[random() % players.length];
         winner.transfer(this.balance);
         players = new address[](0);
